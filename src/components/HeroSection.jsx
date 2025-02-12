@@ -1,4 +1,4 @@
-import React from 'react';
+// Desc: This is the Hero Section component of the landing page
 import video1 from '../assets/video1.mp4';
 import video2 from '../assets/video2.mp4';
 
