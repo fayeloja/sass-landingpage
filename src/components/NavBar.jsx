@@ -4,10 +4,10 @@ import logo from '../assets/logo.png';
 import { navItems } from '../constants';
 
 const NavBar = () => {
-    const [mobileDrawerOpen, setmobileDrawerOpen] = useState(false);
+    const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
     const toggleNavbar = () => {
-        setmobileDrawerOpen(!mobileDrawerOpen);
+        setMobileDrawerOpen(!mobileDrawerOpen);
     };
 
   return (
@@ -35,12 +35,15 @@ const NavBar = () => {
 
                 </div>
                 
-                <div className="lg:hidden md:flex flex-col justify-end"></div>
-                            <button onClick={toggleNavbar}>
+                <div className="lg:hidden md:flex flex-col justify-end">
+                    <button onClick={toggleNavbar}>
                                 {mobileDrawerOpen ? <X /> : <Menu />}
-                            </button>
+                    </button>
                 </div>
-                <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+                            
+                </div>
+                {mobileDrawerOpen && (
+                    <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
                     <ul>
                     {navItems.map((item, index) => (
                         <li key={index} className="py-4">
@@ -53,6 +56,8 @@ const NavBar = () => {
                         <a href="#" className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800">Create an account</a>
                     </div>
                 </div>
+                    )};
+                
 
             </div>
     </nav>
